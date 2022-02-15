@@ -8,11 +8,11 @@ let grandTotal = 0;
 let hourlyTotalsList = [];
 
 //Replace all of your object literals for the salmon cookie stand with a single constructor function that, when called with the ‘new’ keyword, it creates a new instance.
-function StoreSales(minCust, maxCust, avgSales, id) {
+function StoreSales(minCust, maxCust, avgSales, location) {
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.avgSales = avgSales;
-  this.id = id;
+  this.location = location;
   this.cookiesPerHour = [];
   this.totalCookies = 0;
 
@@ -42,7 +42,7 @@ function StoreSales(minCust, maxCust, avgSales, id) {
   this.render = function () {
     let trElem = document.createElement('tr');
     let tdElem = document.createElement('td');
-    tdElem.textContent = this.id;
+    tdElem.textContent = this.location;
     trElem.appendChild(tdElem);
     for (let i = 0; i < this.cookiesPerHour.length; i++) {
       tdElem = document.createElement('td');
@@ -59,17 +59,17 @@ function StoreSales(minCust, maxCust, avgSales, id) {
 //The header row and footer row are each created in their own stand-alone function
 function renderTableHead() {
   let trH = document.createElement('tr');
-  let tdElem = document.createElement('td');
-  tdElem.textContent = 'Hour of Sale';
-  trH.appendChild(tdElem);
+  let thElem = document.createElement('th');
+  thElem.textContent = 'Hour of Sale';
+  trH.appendChild(thElem);
   for (let i = 0; i < hours.length; i++) {
     let thElem = document.createElement('th');
     thElem.textContent = hours[i];
     trH.appendChild(thElem);
   }
-  let tdTotalH = document.createElement('td');
-  tdTotalH.textContent = 'Daily Location Total';
-  trH.appendChild(tdTotalH);
+  let thTotalH = document.createElement('th');
+  thTotalH.textContent = 'Daily Location Total';
+  trH.appendChild(thTotalH);
   let salesTable = document.getElementById('sales table');
   salesTable.appendChild(trH);
 }
