@@ -7,30 +7,37 @@ let salesTable = document.getElementById('sales table');
 let grandTotal = 0;
 let hourlyTotalsList = [];
 
-//Replace all of your object literals for the salmon cookie stand with a single constructor function that, when called with the ‘new’ keyword, it creates a new instance.
+//Replace all of your object literals for the salmon cookie stand with a single constructor function that, when called with the ‘new’ keyword, it creates a new instance. (static consistent properties in each store object)
 function StoreSales(minCust, maxCust, avgSales, location) {
+  // assigning static properties
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.avgSales = avgSales;
   this.location = location;
+  // assigning non-static properties (properties that change in each object)
   this.cookiesPerHour = [];
   this.totalCookies = 0;
 
+  // create each store into its own function
   stores.push(this);
 
+  // adding the method which calculates the random number of customers per hour
   this.custPerHour = function (min, max) {
     return Math.floor(Math.random() * (max - min) + min);
   };
+  // calculating cookies per hour sold using the customer per hour method from above
   this.hourlyTotals = function () {
     for (let i = 0; i < hours.length; i++) {
       this.cookiesPerHour.push(Math.ceil(this.custPerHour(this.minCust, this.maxCust) * this.avgSales));
     }
   };
+  // daily total cookies method; calc cookies per hour and add to total cookies per each location
   this.dailyTotal = function () {
     for (let i = 0; i < this.cookiesPerHour.length; i++) {
       this.totalCookies += this.cookiesPerHour[i];
     }
   };
+  // Calling all the methods
   this.dailyStats = function () {
     this.hourlyTotals();
     this.dailyTotal();
@@ -39,6 +46,7 @@ function StoreSales(minCust, maxCust, avgSales, location) {
 
   //Replace the lists of your data for each store and build a single table of data instead. It should look similar to the following:
   //Each cookie stand location should have a separate render() method that creates and appends its row to the table
+  // creating the table rows for the locations and the table cells for the cookiesPerHour property 
   this.render = function () {
     let trElem = document.createElement('tr');
     let tdElem = document.createElement('td');
@@ -57,6 +65,7 @@ function StoreSales(minCust, maxCust, avgSales, location) {
 }
 
 //The header row and footer row are each created in their own stand-alone function
+// creating the table head and the hours of the day and then creating cells for each hour
 function renderTableHead() {
   let trH = document.createElement('thead');
   let thElem = document.createElement('th');
@@ -74,6 +83,7 @@ function renderTableHead() {
   salesTable.appendChild(trH);
 }
 
+// calculating the hourly totals and the grand totals and pushing hourly totals into the hourly total list for use in footer table
 function calculator() {
   for (let i = 0; i < hours.length; i++) {
     let hourlyTotals = 0;
@@ -86,6 +96,7 @@ function calculator() {
 }
 
 //The header row and footer row are each created in their own stand-alone function
+// creating the table row (table foot) and cells for the hourly totals and grand total
 function renderTableFoot() {
   let trF = document.createElement('tfoot');
   let tdElem = document.createElement('td');
@@ -103,21 +114,26 @@ function renderTableFoot() {
   salesTable.appendChild(trF);
 }
 
-renderTableHead();
-
+// Adding in stores to the constructor
 let seattle = new StoreSales(23, 65, 6.3, 'Seattle');
 let tokyo = new StoreSales(3, 24, 1.2, 'Tokyo');
 let dubai = new StoreSales(11, 38, 3.7, 'Dubai');
 let paris = new StoreSales(20, 38, 2.3, 'Paris');
 let lima = new StoreSales(2, 16, 4.6, 'Lima');
 
+// calling the daily stats: hourly totals and daily totals and rendering individial objects
 seattle.dailyStats();
 tokyo.dailyStats();
 dubai.dailyStats();
 paris.dailyStats();
 lima.dailyStats();
 
+
+// rendering table head with hours of the day
+renderTableHead();
+// calling calculator for grand total
 calculator();
+// render table foot with grand totals
 renderTableFoot();
 
 
