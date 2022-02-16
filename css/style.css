@@ -1,6 +1,8 @@
 html body {
-  background-color: rgb(235, 192, 218);
+  background-color: #D6CFCB;
 }
+
+/* table styling */
 
 table, th, td {
   border: 1px solid;
@@ -10,5 +12,86 @@ table, th, td {
   text-align: center;
   width: auto;
   background-color: aliceblue;
+}
+
+/* header styling */
+
+header {
+
+}
+
+header div {
+
+}
+
+nav {
+
+}
+
+nav ul {
+
+}
+
+nav ul li {
+
+}
+
+/* main styling */
+#aboutUs {
+
+}
+
+#aboutUs h2 {
+
+}
+
+#aboutUs p {
+
+}
+
+#aboutUs img {
+
+}
+
+#merch {
+
+}
+
+#merch h2 {
+
+}
+
+#merch p {
+
+}
+
+#merch ul {
+
+}
+
+#merch ul li {
+
+}
+
+/* footer styling */
+
+#contact {
+
+}
+
+#contact h2 {
+
+}
+
+#contact img {
+
+}
+
+#contact ul {
+
+}
+
+#contact ul li {
+
 }
 
