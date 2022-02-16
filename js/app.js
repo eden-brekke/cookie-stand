@@ -7,9 +7,9 @@ let salesTable = document.getElementById('sales table');
 let grandTotal = 0;
 let hourlyTotalsList = [];
 
-//Replace all of your object literals for the salmon cookie stand with a single constructor function that, when called with the ‘new’ keyword, it creates a new instance. (static consistent properties in each store object)
+//Replace all of your object literals for the salmon cookie stand with a single constructor function that, when called with the ‘new’ keyword, it creates a new instance. (static unique consistent properties in each store object)
 function StoreSales(minCust, maxCust, avgSales, location) {
-  // assigning static properties
+  // assigning unique static properties
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.avgSales = avgSales;
