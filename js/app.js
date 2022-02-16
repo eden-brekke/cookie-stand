@@ -58,9 +58,9 @@ function StoreSales(minCust, maxCust, avgSales, location) {
 
 //The header row and footer row are each created in their own stand-alone function
 function renderTableHead() {
-  let trH = document.createElement('tr');
+  let trH = document.createElement('thead');
   let thElem = document.createElement('th');
-  thElem.textContent = 'Hour of Sale';
+  thElem.textContent = 'Hour of Day';
   trH.appendChild(thElem);
   for (let i = 0; i < hours.length; i++) {
     let thElem = document.createElement('th');
@@ -87,9 +87,9 @@ function calculator() {
 
 //The header row and footer row are each created in their own stand-alone function
 function renderTableFoot() {
-  let trF = document.createElement('tr');
+  let trF = document.createElement('tfoot');
   let tdElem = document.createElement('td');
-  tdElem.textContent = 'Hour Total';
+  tdElem.textContent = 'Hourly Totals';
   trF.appendChild(tdElem);
   for (let i = 0; i < hourlyTotalsList.length; i++) {
     let thElem = document.createElement('td');
@@ -99,7 +99,7 @@ function renderTableFoot() {
   let tdFTotal = document.createElement('td');
   tdFTotal.textContent = grandTotal;
   trF.appendChild(tdFTotal);
-  let salesTable = document.getElementById('footer');
+  let salesTable = document.getElementById('sales table');
   salesTable.appendChild(trF);
 }
 

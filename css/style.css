@@ -1,0 +1,13 @@
+html body {
+  background-color: rgb(235, 192, 218);
+}
+
+table, th, td {
+  border: 1px solid;
+  border-color: black;
+  border-radius: 3px;
+  padding: 5px;
+  text-align: center;
+  width: auto;
+}
+
