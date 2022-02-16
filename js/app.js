@@ -46,7 +46,7 @@ function StoreSales(minCust, maxCust, avgSales, location) {
 
   //Replace the lists of your data for each store and build a single table of data instead. It should look similar to the following:
   //Each cookie stand location should have a separate render() method that creates and appends its row to the table
-  // creating the table rows for the locations and the table cells for the cookiesPerHour property 
+  // creating the table rows for the locations and the table cells for the cookiesPerHour property
   this.render = function () {
     let trElem = document.createElement('tr');
     let tdElem = document.createElement('td');
