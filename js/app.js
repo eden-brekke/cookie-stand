@@ -18,35 +18,47 @@ function StoreSales(minCust, maxCust, avgSales, location) {
   this.cookiesPerHour = [];
   this.totalCookies = 0;
 
-  // create each store into its own function
+  // create each instansiated object store into its own array
   stores.push(this);
 
   // adding the method which calculates the random number of customers per hour
+  //If I wanted to use the prototype method this would be "StoreSales.prototype.custPerHour"
   this.custPerHour = function (min, max) {
     return Math.floor(Math.random() * (max - min) + min);
   };
+
   // calculating cookies per hour sold using the customer per hour method from above
+  //If I wanted to use the prototype method this would be "StoreSales.prototype.hourlyTotals"
   this.hourlyTotals = function () {
     for (let i = 0; i < hours.length; i++) {
       this.cookiesPerHour.push(Math.ceil(this.custPerHour(this.minCust, this.maxCust) * this.avgSales));
     }
   };
+
   // daily total cookies method; calc cookies per hour and add to total cookies per each location
+  //If I wanted to use the prototype method this would be "StoreSales.prototype.dailyTotal"
   this.dailyTotal = function () {
     for (let i = 0; i < this.cookiesPerHour.length; i++) {
       this.totalCookies += this.cookiesPerHour[i];
     }
   };
+
   // Calling all the methods
+  //If I wanted to use the prototype method this would be "StoreSales.prototype.dailyStats"
   this.dailyStats = function () {
     this.hourlyTotals();
     this.dailyTotal();
     this.render();
   };
 
+
+  // if I had used prototypes: think inherit showing you can have the methods within your constructor but you can also have it outside of the constructor, and that the prototype means that the object will inherit the method within the prototype method
+
+
   //Replace the lists of your data for each store and build a single table of data instead. It should look similar to the following:
   //Each cookie stand location should have a separate render() method that creates and appends its row to the table
   // creating the table rows for the locations and the table cells for the cookiesPerHour property
+  //If I wanted to use the prototype method this would be "StoreSales.prototype.render"
   this.render = function () {
     let trElem = document.createElement('tr');
     let tdElem = document.createElement('td');
