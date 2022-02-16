@@ -56,16 +56,16 @@ function StoreSales(minCust, maxCust, avgSales, location) {
   // creating the table rows for the locations and the table cells for the cookiesPerHour property
   //If I wanted to use the prototype method this would be "StoreSales.prototype.render" and it would be outside of the constructor
   this.render = function () {
-    let trElem = document.createElement('tr');
-    let tdElem = document.createElement('td');
+    let trElem = document.createElement('tr'); // table row creation
+    let tdElem = document.createElement('td'); // table cell creation
     tdElem.textContent = this.location;
     trElem.appendChild(tdElem);
     for (let i = 0; i < this.cookiesPerHour.length; i++) {
-      tdElem = document.createElement('td');
+      tdElem = document.createElement('td'); // table cell creation
       tdElem.textContent = this.cookiesPerHour[i];
       trElem.appendChild(tdElem);
     }
-    tdElem = document.createElement('td');
+    tdElem = document.createElement('td'); // table cell creation
     tdElem.textContent = this.totalCookies;
     trElem.appendChild(tdElem);
     salesTable.appendChild(trElem);
@@ -78,19 +78,19 @@ function StoreSales(minCust, maxCust, avgSales, location) {
 //The header row and footer row are each created in their own stand-alone function
 // creating the table head and the hours of the day and then creating cells for each hour
 function renderTableHead() {
-  let trH = document.createElement('thead');
-  let thElem = document.createElement('th');
+  let trH = document.createElement('thead'); // table header (row)
+  let thElem = document.createElement('th'); //table header (cell)
   thElem.textContent = 'Hour of Day';
   trH.appendChild(thElem);
   for (let i = 0; i < hours.length; i++) {
-    let thElem = document.createElement('th');
+    let thElem = document.createElement('th'); // table header (cell)
     thElem.textContent = hours[i];
     trH.appendChild(thElem);
   }
-  let thTotalH = document.createElement('th');
+  let thTotalH = document.createElement('th'); //table header (cell)
   thTotalH.textContent = 'Daily Location Total';
   trH.appendChild(thTotalH);
-  let salesTable = document.getElementById('sales table');
+  let salesTable = document.getElementById('sales table'); // DOM window
   salesTable.appendChild(trH);
 }
 
@@ -109,23 +109,23 @@ function calculator() {
 //The header row and footer row are each created in their own stand-alone function
 // creating the table row (table foot) and cells for the hourly totals and grand total
 function renderTableFoot() {
-  let trF = document.createElement('tfoot');
-  let tdElem = document.createElement('td');
+  let trF = document.createElement('tfoot'); //foot row
+  let tdElem = document.createElement('td'); //table cell
   tdElem.textContent = 'Hourly Totals';
   trF.appendChild(tdElem);
   for (let i = 0; i < hourlyTotalsList.length; i++) {
-    let thElem = document.createElement('td');
+    let thElem = document.createElement('td'); // table cell
     thElem.textContent = hourlyTotalsList[i];
     trF.appendChild(thElem);
   }
-  let tdFTotal = document.createElement('td');
+  let tdFTotal = document.createElement('td'); // table cell
   tdFTotal.textContent = grandTotal;
   trF.appendChild(tdFTotal);
-  let salesTable = document.getElementById('sales table');
+  let salesTable = document.getElementById('sales table'); // DOM window
   salesTable.appendChild(trF);
 }
 
-// Adding in stores to the constructor
+// instantiating a new object to the constructor
 let seattle = new StoreSales(23, 65, 6.3, 'Seattle');
 let tokyo = new StoreSales(3, 24, 1.2, 'Tokyo');
 let dubai = new StoreSales(11, 38, 3.7, 'Dubai');
