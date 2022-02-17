@@ -29,29 +29,29 @@
 
   <body>
     <!-- part of lab 9 but since I was done with css, started on the html, needs js portion still -->
-    <form class="storeBuilder">
-      <div class="storeBuilder">
+    <form id="storeForm">
+      <fieldset>
+        <legend>Add a new store!</legend>
+
         <label for="storeLocation">Store Location</label>
-        <input name="storeLocation" type="text">
-      </div>
-      <div class="storeBuilder">
+        <input name="storeLocation" type="text" id="storeLocation" required>
+
         <label for="minCust">Minimum Customers</label>
-        <input name="minCust" type="text">
-      </div>
-      <div class="storeBuilder">
+        <input name="minCust" type="text" id="minCust" required>
+
+
         <label for="maxCust">Maximum Customers</label>
-        <input name="maxCust" type="text">
-      </div>
-      <div class="storeBuilder">
+        <input name="maxCust" type="text" id="maxCust">
+
+
         <label for="avgSales">Average Cookies Sold Per Hour</label>
-        <input name="avgSales" type="text">
-      </div>
-      <div class="storeBuilder">
+        <input name="avgSales" type="text" id="avgSales" required>
+
         <button type="submit">Submit</button>
-      </div>
+      </fieldset>
     </form>
 
   </body>
   <script src="js/app.js"></script>
 
-</html> 
+</html>
