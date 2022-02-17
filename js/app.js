@@ -80,7 +80,7 @@ function StoreSales(minCust, maxCust, avgSales, location) {
 function renderTableHead() {
   let trH = document.createElement('thead'); // table header (row)
   let thElem = document.createElement('th'); //table header (cell)
-  thElem.textContent = 'Hour of Day';
+  thElem.textContent = 'Hour of Day: Location';
   trH.appendChild(thElem);
   for (let i = 0; i < hours.length; i++) {
     let thElem = document.createElement('th'); // table header (cell)
