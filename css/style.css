@@ -61,6 +61,7 @@ div img {
 
 a {
   color: #565264;
+  text-decoration: none;
 }
 
 a:hover {
