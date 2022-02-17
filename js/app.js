@@ -4,6 +4,7 @@
 let hours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 let stores = [];
 let salesTable = document.getElementById('sales table');
+let inputStore = document.getElementById('store-form');
 let grandTotal = 0;
 let hourlyTotalsList = [];
 
@@ -18,7 +19,7 @@ function StoreSales(minCust, maxCust, avgSales, location) {
   this.cookiesPerHour = [];
   this.totalCookies = 0;
 
-  // create each instansiated object store into its own array
+  // create each instantiated object store into its own array
   stores.push(this);
 
   // adding the method which calculates the random number of customers per hour
@@ -109,7 +110,9 @@ function calculator() {
 //The header row and footer row are each created in their own stand-alone function
 // creating the table row (table foot) and cells for the hourly totals and grand total
 function renderTableFoot() {
+  calculator();
   let trF = document.createElement('tfoot'); //foot row
+  trF.setAttribute('id', 'tfooter');
   let tdElem = document.createElement('td'); //table cell
   tdElem.textContent = 'Hourly Totals';
   trF.appendChild(tdElem);
@@ -132,7 +135,7 @@ let dubai = new StoreSales(11, 38, 3.7, 'Dubai');
 let paris = new StoreSales(20, 38, 2.3, 'Paris');
 let lima = new StoreSales(2, 16, 4.6, 'Lima');
 
-// calling the daily stats: hourly totals and daily totals and rendering individial objects
+// calling the daily stats: hourly totals and daily totals and rendering individual objects
 seattle.dailyStats();
 tokyo.dailyStats();
 dubai.dailyStats();
@@ -142,10 +145,30 @@ lima.dailyStats();
 
 // rendering table head with hours of the day
 renderTableHead();
-// calling calculator for grand total
-calculator();
 // render table foot with grand totals
 renderTableFoot();
 
+//Step 3 Event Handler -tell event what to do with the info of what it's heard
+function handleSubmit(event) {
+  event.preventDefault();
 
+  let location = event.target.storeLocation.value;
+  let minCust = +event.target.minCust.value;
+  let maxCust = +event.target.maxCust.value;
+  let avgSales = +event.target.avgSales.value;
+
+  let newStore = new StoreSales(minCust, maxCust, avgSales, location);
+
+  newStore.dailyStats();
+
+  let tableFootRemove = document.getElementById('tfooter');
+  tableFootRemove.innerHTML = "";
+  tableFootRemove.remove();
+  renderTableFoot();
+
+  inputStore.reset();
+}
+
+//Step 2 Add Event listener and tell it what even to listen for, then pass to the event handler
+inputStore.addEventListener('submit', handleSubmit);
 
