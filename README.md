@@ -1,5 +1,7 @@
 # cookie-stand
 
+[Deployed site](https://eden-brekke.github.io/cookie-stand/)
+
 ## LAB - 6
 Cookie Stand <br>
 Making a website that will generate a random number customers and cookie sales. Using JS to create HTML elements. 
