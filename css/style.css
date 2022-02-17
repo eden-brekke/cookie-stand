@@ -1,14 +1,169 @@
 html body {
-  background-color: rgb(235, 192, 218);
+  background-color: #D6CFCB;
+  width:1130px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* table styling */
+#snack {
+  font-size: 30px;
+  color:#a57382;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Lobster', cursive;
+}
 table, th, td {
-  border: 1px solid;
-  border-color: black;
-  border-radius: 3px;
-  padding: 5px;
+  border: groove;
+  border-color: #FFCAD4;
+  border-radius: 10px;
+  padding: 10px;
   text-align: center;
   width: auto;
-  background-color: aliceblue;
+  background-color: #565264;
+  color:#D6CFCB;
+}
+
+/* header styling */
+
+header {
+
+}
+#title {
+  
+  font-family: 'Lobster', cursive;
+  color: #565264;
+  font-size: 50px;
+  text-align: center;
+  width: auto;
+  margin-bottom: 20px;
+}
+
+header div {
+  width: 1130px;
+  height: 300px;
+  border:groove; 
+  border-color: #A6808C;
+  border-width: 5px;
+  background-color: #a57382;
+}
+
+div img {
+  position: absolute;
+  bottom: 650px;
+  left: 700px;
+  width: 500px;
+  height: 300px:
+  transform: rotate(340deg);
+}
+
+a {
+  color: #565264;
+}
+
+a:hover {
+  color:#D6CFCB;
+}
+
+nav ul li {
+  display: inline-block;
+  vertical-align: top;
+  font-family: 'Lobster', cursive;
+  font-size: 25px;
+  padding: 30px;
+  margin:0, auto;
+  
+}
+
+/* main styling */
+article {
+  background-color:#565264;
+  text-align: center;  
+  border:double; 
+  border-width: 5px;
+  content: 8px;
+  margin-bottom:50px;
+  margin-top:50px;
+  width:1115px;
+  color: #D6CFCB;
+  padding-bottom: 50px;
+  padding-right:50px;
+}
+article h2{
+  font-size: 30px;
+  color:#a57382;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Lobster', cursive;
+}
+
+article p {
+  height: 300px;
+  overflow: auto;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 30px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#merch ul {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+ 
+figcaption{
+  color:#a57382;
+  font-weight: bold;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+/* footer styling */
+
+#contact {
+  width: 100%;
+  height: 300px;
+}
+
+
+#contact img {
+    float:right;
+    height: min-content;
+    padding-left: 10px;
+}
+
+#contact ul {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#contact ul li {
+  margin: 10px;
+  text-align: left;
+}
+#contact ul li:nth-child(1){
+  color: #D8E2DC;
+}
+#contact ul li:nth-child(2){
+  color: #FFE5D9;
+}
+#contact ul li:nth-child(3){
+  color: #FFCAD4;
+}
+#contact ul li:nth-child(4){
+  color: #F4ACB7;
+}
+#contact ul li:nth-child(5){
+  color: #9D8189;
+}
+#contact ul li:last-child {
+  color:#fff;
 }
 
