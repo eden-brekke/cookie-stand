@@ -9,22 +9,47 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
+<body>
+  <header>
+    <div>
+      <h1 id="title">Cookies Sales by Salmon Cookies.Inc</h1>
+      <img src="assets/salmon.png" alt="Site Logo, a Salmon">
+      <section id="cookieStand"></section>
+      <nav>
+        <ul>
+          <li><a href="index.html">🍪Back to the Home Page</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section id="city sales"></section>
+  <h2 id="snack">The Cookie "Snack"tistics</h2>
+  <table id="sales table"></table>
+
   <body>
-    <header>
-      <div>
-        <h1 id="title">Cookies Sales by Salmon Cookies.Inc</h1>
-        <img src="assets/salmon.png" alt="Site Logo, a Salmon">
-        <section id="cookieStand"></section>
-        <nav>
-          <ul>
-            <li><a href="index.html">🍪Back to the Home Page</a></li>
-          </ul>
-        </nav>
+    <form class="storeBuilder">
+      <div class="storeBuilder">
+        <label for="storeLocation">Store Location</label>
+        <input name="storeLocation" type="text">
       </div>
-    </header>
-    <section id="city sales"></section>
-    <h2 id="snack">The Cookie "Snack"tistics</h2>
-    <table id="sales table"></table>
+      <div class="storeBuilder">
+        <label for="minimumCustomers">Minimum Customers</label>
+        <input name="minimumCustomers" type="text">
+      </div>
+      <div class="storeBuilder">
+        <label for="maximumCustomers">Maximum Customers</label>
+        <input name="maximumCustomers" type="text">
+      </div>
+      <div class="storeBuilder">
+        <label for="averagePerHour">Average Per Hour</label>
+        <input name="averagePerHour" type="text">
+      </div>
+      <div class="storeBuilder">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
   </body>
   <script src="js/app.js"></script>
 
