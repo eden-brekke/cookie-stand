@@ -162,7 +162,7 @@ function handleSubmit(event) {
   newStore.dailyStats();
 
   let tableFootRemove = document.getElementById('tfooter');
-  tableFootRemove.innerHTML ="";
+  tableFootRemove.innerHTML = "";
   tableFootRemove.remove();
   renderTableFoot();
 
