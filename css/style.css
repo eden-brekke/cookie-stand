@@ -4,6 +4,8 @@ html body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  background-image: url(../assets/linus-nylund-UCIZh0-OYPw-unsplash.jpg);
+  background-repeat: repeat;
 }
 
 /* table styling */
@@ -25,13 +27,11 @@ table, th, td {
   width: auto;
   background-color: #565264;
   color:#D6CFCB;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 /* header styling */
 
-header {
-
-}
 #title {
   
   font-family: 'Lobster', cursive;
@@ -56,8 +56,7 @@ div img {
   bottom: 650px;
   left: 700px;
   width: 500px;
-  height: 300px:
-  transform: rotate(340deg);
+  transform: rotate(350deg);
 }
 
 a {
