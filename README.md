@@ -60,3 +60,19 @@ CSS is more fun than I give it credit for. I enjoyed doing this, but I know ther
 How long did it take you to complete this assignment? And, before you started, how long did you think it would take you to complete this assignment?<br>
 I got the bulk of it done pretty quickly but small aspects of this made it take around 4 hours. Not too bad! <br>
 
+## LAB 9 
+Adding a new Store Form Work <br>
+Add a way for the user to add a new store location to your sales' table <br>
+
+
+Links and References <br>
+No links, just class and a little help from Tai. <br>
+
+
+Reflection and Comments: <br>
+How did this go, overall? <br>
+I had already gotten started on this lab yesterday so I had quite a bit of a headstart. This stuff clicked with me pretty easily, I had a little snag with having to get rid of the table footer, since I was running my calculations function outside of my footer rendering prior to this, but once I moved the calculation within the footer, everything worked out smoothly. <br>
+What observations or questions do you have about what you’ve learned so far?<br>
+Forms seem like they could do a ton of stuff. Everything we're learning is compounding easily together, which makes it easier to move on to new topics and get an even more firm grasp on older topics. <br>
+How long did it take you to complete this assignment? And, before you started, how long did you think it would take you to complete this assignment?<br> 
+I didn't think this topic would take me very long to complete since I had already started working on it. It only took me about an hour to get everything working and styled. <br>
