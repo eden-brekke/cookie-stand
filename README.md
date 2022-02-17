@@ -44,3 +44,19 @@ I think I should challenge myself to go back and try to figure that out. <br>
 
 How long did it take you to complete this assignment? And, before you started, how long did you think it would take you to complete this assignment?<br>
 this assignment only took me about an hour and a half, and I was pretty confident going in that I would be able to get this done quickly, since I already had the tough stuff figured out from the previous lab. <br>
+
+## LAB 8 
+Styling your Cookie Stand Website <br>
+It's CSS tiiiiiime! Get stylin! Add pictures, add sections, Try and get creative with it! <br>
+
+Links and References <br>
+I mostly used todays demos a my references. <br>
+
+Reflection and Comments: <br>
+How did this go, overall? <br>
+This went pretty well! Audrey's CSS demo really helped and a lot of just finagling and checking to see if something worked how I wanted it. Back and forth<br>
+What observations or questions do you have about what you’ve learned so far?<br>
+CSS is more fun than I give it credit for. I enjoyed doing this, but I know there's a lot more I could learn to level up!<br>
+How long did it take you to complete this assignment? And, before you started, how long did you think it would take you to complete this assignment?<br>
+I got the bulk of it done pretty quickly but small aspects of this made it take around 4 hours. Not too bad! <br>
+
