@@ -110,7 +110,9 @@ function calculator() {
 //The header row and footer row are each created in their own stand-alone function
 // creating the table row (table foot) and cells for the hourly totals and grand total
 function renderTableFoot() {
+  calculator();
   let trF = document.createElement('tfoot'); //foot row
+  trF.setAttribute('id', 'tfooter');
   let tdElem = document.createElement('td'); //table cell
   tdElem.textContent = 'Hourly Totals';
   trF.appendChild(tdElem);
@@ -143,12 +145,10 @@ lima.dailyStats();
 
 // rendering table head with hours of the day
 renderTableHead();
-// calling calculator for grand total
-calculator();
 // render table foot with grand totals
 renderTableFoot();
 
-
+//Step 3 Event Handler -tell event what to do with the info of what it's heard
 function handleSubmit(event) {
   event.preventDefault();
 
@@ -160,12 +160,15 @@ function handleSubmit(event) {
   let newStore = new StoreSales(minCust, maxCust, avgSales, location);
 
   newStore.dailyStats();
-  newStore.renderTableHead();
-  newStore.calculator();
-  newStore.renderTableFoot();
+
+  let tableFootRemove = document.getElementById('tfooter');
+  tableFootRemove.innerHTML ="";
+  tableFootRemove.remove();
+  renderTableFoot();
 
   inputStore.reset();
 }
 
+//Step 2 Add Event listener and tell it what even to listen for, then pass to the event handler
 inputStore.addEventListener('submit', handleSubmit);
 
