@@ -4,6 +4,7 @@
 let hours = ['6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm'];
 let stores = [];
 let salesTable = document.getElementById('sales table');
+let inputStore = document.getElementById('store-form');
 let grandTotal = 0;
 let hourlyTotalsList = [];
 
@@ -18,7 +19,7 @@ function StoreSales(minCust, maxCust, avgSales, location) {
   this.cookiesPerHour = [];
   this.totalCookies = 0;
 
-  // create each instansiated object store into its own array
+  // create each instantiated object store into its own array
   stores.push(this);
 
   // adding the method which calculates the random number of customers per hour
@@ -132,7 +133,7 @@ let dubai = new StoreSales(11, 38, 3.7, 'Dubai');
 let paris = new StoreSales(20, 38, 2.3, 'Paris');
 let lima = new StoreSales(2, 16, 4.6, 'Lima');
 
-// calling the daily stats: hourly totals and daily totals and rendering individial objects
+// calling the daily stats: hourly totals and daily totals and rendering individual objects
 seattle.dailyStats();
 tokyo.dailyStats();
 dubai.dailyStats();
@@ -148,4 +149,23 @@ calculator();
 renderTableFoot();
 
 
+function handleSubmit(event) {
+  event.preventDefault();
+
+  let location = event.target.storeLocation.value;
+  let minCust = +event.target.minCust.value;
+  let maxCust = +event.target.maxCust.value;
+  let avgSales = +event.target.avgSales.value;
+
+  let newStore = new StoreSales(minCust, maxCust, avgSales, location);
+
+  newStore.dailyStats();
+  newStore.renderTableHead();
+  newStore.calculator();
+  newStore.renderTableFoot();
+
+  inputStore.reset();
+}
+
+inputStore.addEventListener('submit', handleSubmit);
 
