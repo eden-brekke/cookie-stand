@@ -136,7 +136,7 @@ function renderTableHead() {
 // calculating the hourly totals and the grand totals and pushing hourly totals into the hourly total list for use in footer table
 // let grandTotal = 0; // first iteration first column + 2nd second iteration
 function calculator() {
-  for (let i = 0; i < hours.length; i++) {  // slow loop
+  for (let i = 0; i < hours.length; i++) { // slow loop
     let hourlyTotals = 0;
     // gets updated each fast loop iteration
     for (let j = 0; j < stores.length; j++) { // fast loop
@@ -190,7 +190,7 @@ renderTableHead();
 // render table foot with grand totals
 renderTableFoot();
 
-//Step 3 Event Handler -tell event what to do with the info of what it's heard
+//Step 3 Event Handler -tell event what to do with the info of what it's heard- call back function
 function handleSubmit(event) {
   event.preventDefault();
 
@@ -204,7 +204,7 @@ function handleSubmit(event) {
   newStore.dailyStats();
 
   let tableFootRemove = document.getElementById('tfooter');
-  tableFootRemove.innerHTML = "";
+  tableFootRemove.innerHTML = '';
   tableFootRemove.remove();
   renderTableFoot();
 
