@@ -134,14 +134,18 @@ function renderTableHead() {
 }
 
 // calculating the hourly totals and the grand totals and pushing hourly totals into the hourly total list for use in footer table
+// let grandTotal = 0; // first iteration first column + 2nd second iteration
 function calculator() {
-  for (let i = 0; i < hours.length; i++) {
+  for (let i = 0; i < hours.length; i++) {  // slow loop
     let hourlyTotals = 0;
-    for (let j = 0; j < stores.length; j++) {
+    // gets updated each fast loop iteration
+    for (let j = 0; j < stores.length; j++) { // fast loop
       hourlyTotals += stores[j].cookiesPerHour[i];
-    }
+    } // hourlyTotal = hourlyTotals + store[j].cookiesPerHour[i]
     grandTotal += hourlyTotals;
+    // grantTotal = grandTotal + hourlyTotals
     hourlyTotalsList[i] = hourlyTotals;
+    // add to the array each iteration
   }
 }
 
