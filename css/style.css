@@ -133,7 +133,7 @@ header div {
 }
 
 div img {
-  position: absolute;
+  /* position: absolute; */
   z-index: 0;
   bottom: 630px;
   left: 700px;
