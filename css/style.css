@@ -134,7 +134,8 @@ header div {
 
 div img {
   position: absolute;
-  bottom: 650px;
+  z-index: 0;
+  bottom: 630px;
   left: 700px;
   width: 500px;
   transform: rotate(350deg);
@@ -163,6 +164,7 @@ nav ul li {
   text-align: center;
   justify-content: center;
   cursor: pointer;
+  z-index: 1;
 }
 
 /* main styling */
