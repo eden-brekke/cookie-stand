@@ -89,6 +89,7 @@ table td:nth-child(even){
   transition: 350ms;
   border-radius: 10px;
   cursor: pointer;
+  color: #a57382;
 }
 
 #store-form button:hover {
